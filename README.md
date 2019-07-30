@@ -2,6 +2,8 @@
 
 logzio-docker-filebeat is a Docker container that uses Filebeat to collect logs from other Docker containers and ship those logs to your Logz.io account. This repository is not officially supported by Logz.io.
 
+Containers should be configured to use the `json-file` logging driver to be picked up by logzio-docker-filebeat.
+
 ## Usage
 
 ### 1. Configure filebeat.yml
