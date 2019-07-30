@@ -23,6 +23,6 @@ registry_file: /var/lib/filebeat/registry
 
 output:
   logstash:
-    hosts: [<LOGZIO_LISTENER_URL>:5015"]
+    hosts: ["<LOGZIO_LISTENER_URL>:5015"]
     ssl:
       certificate_authorities: ['/etc/pki/tls/certs/COMODORSADomainValidationSecureServerCA.crt']
