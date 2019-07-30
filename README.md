@@ -1,6 +1,6 @@
 # logzio-docker-filebeat
 
-logzio-docker-filebeat is a Docker container that uses Filebeat to collect logs from other Docker containers and ship those logs to your Logz.io account.
+logzio-docker-filebeat is a Docker container that uses Filebeat to collect logs from other Docker containers and ship those logs to your Logz.io account. This repository is not officially supported by Logz.io.
 
 ## Usage
 
