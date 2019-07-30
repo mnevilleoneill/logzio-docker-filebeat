@@ -7,7 +7,7 @@ RUN mkdir -p /etc/pki/tls/certs; \
 	mkdir -p /usr/share/filebeat; \
 	mkdir -p /tmp/filebeat/ 
 
-ADD  https://raw.githubusercontent.com/logzio/public-certificates/master/COMODORSADomainValidationSecureServerCA.crt /etc/pki/tls/certs/
+ADD https://raw.githubusercontent.com/logzio/public-certificates/master/COMODORSADomainValidationSecureServerCA.crt /etc/pki/tls/certs/
 ADD https://artifacts.elastic.co/downloads/beats/filebeat/$PACKAGE /tmp/filebeat/$PACKAGE
 
 RUN apk add --update --no-cache libc6-compat tar; \
