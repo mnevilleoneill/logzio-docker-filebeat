@@ -1,0 +1,28 @@
+############################# Filebeat #####################################
+
+filebeat.inputs:
+
+- type: docker
+  containers:
+    path: /var/lib/docker/containers
+    ids: '*'
+    multiline.pattern: '^[[:space:]]+(at|\.{3})\b|^Caused by:'
+    multiline.negate: false
+    multiline.match: after
+  fields:
+    logzio_codec: plain
+    token: <LOGZIO_TOKEN>
+    type: docker
+  fields_under_root: true
+  processors:
+  - add_docker_metadata: ~
+
+registry_file: /var/lib/filebeat/registry
+
+############################# Output ##########################################
+
+output:
+  logstash:
+    hosts: [<LOGZIO_LISTENER_URL>:5015"]
+    ssl:
+      certificate_authorities: ['/etc/pki/tls/certs/COMODORSADomainValidationSecureServerCA.crt']
